@@ -1,0 +1,100 @@
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!-- The main content view -->
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="@dimen/activity_main_horizontal_margin"
+        android:paddingRight="@dimen/activity_main_horizontal_margin"
+        android:paddingTop="@dimen/activity_main_vertical_margin"
+        android:paddingBottom="@dimen/activity_main_vertical_margin"
+        tools:context=".MainActivity">
+
+       <ImageButton
+           android:id="@+id/hamburger"
+           android:layout_width="35dp"
+           android:layout_height="35dp"
+           android:layout_marginLeft="0dp"
+           android:layout_marginTop="10dp"
+           android:scaleType="fitXY"
+           android:src="@drawable/drawer_button"
+           android:layout_gravity="left"
+           android:background="@android:color/transparent"
+           />
+
+        <TextView
+            android:text="Forewarn"
+            android:textSize="20pt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:id="@+id/textView"
+            android:layout_marginTop="80dp"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal|top" />
+
+        <Button android:text="Scan"
+            android:layout_width="122dp"
+            android:id="@+id/cambutton"
+            android:layout_height="126dp"
+            android:onClick="navCamera"
+            android:layout_marginBottom="106dp"
+            android:textSize="12pt"
+            android:paddingLeft="25dp"
+            android:paddingRight="25dp"
+            android:paddingTop="30dp"
+            android:paddingBottom="30dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal|bottom" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Help"
+            android:id="@+id/helpButton"
+            android:layout_gravity="right|top" />
+
+    </FrameLayout>
+
+    <!-- The navigation drawer -->
+    <RelativeLayout
+        android:id="@+id/left_drawer"
+        android:orientation="vertical"
+        android:layout_width="240dp"
+        android:layout_gravity="start"
+        android:background="#ffffff"
+        android:layout_height="fill_parent">
+        <Button
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:text="Forewarn"
+            android:id="@+id/drawer_title"
+            android:enabled="false"/>
+        <Button
+            android:text="Customize"
+            android:id="@+id/custom_buttonb"
+            android:layout_width="240dp"
+            android:layout_alignParentBottom="true"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:onClick="navCustomize"/>
+        <ListView android:id="@+id/drawer_list"
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:divider="@android:color/transparent"
+            android:dividerHeight="0dp"
+            android:background="#eeeeee"
+            android:layout_below="@id/drawer_title"
+            android:layout_above="@id/custom_buttonb">
+        </ListView>
+    </RelativeLayout>
+
+</android.support.v4.widget.DrawerLayout>

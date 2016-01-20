@@ -1,0 +1,20 @@
+stages:
+  - build		# We only have one stage
+
+BuildAndDeploy: # Create a job for building the project
+  stage: build
+  script:
+    - export ANDROID_HOME=/home/android-sdk-linux
+    - echo "Runner's Working directory ..." && pwd
+    - gradle assemble
+    - echo "Project directory after build ..." && ls
+    - echo "Remote copying build artifacts to the production server ..."
+    - scp -i /home/gitlab-runner/.ssh/id_rsa -r ./app/build/outputs/* csse@371-3-b-prod:public_html/
+    - echo "All done, cleaning the project directory ..."
+    - gradle clean
+  only:
+    - master
+  tags:
+    - Gradle
+    - Android
+    - Forewarn

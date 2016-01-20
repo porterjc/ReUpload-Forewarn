@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.forewarn.forewarn">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/icon"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme"
+        android:name=".Global">
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".CameraActivity"
+            android:label="@string/title_activity_camera" >
+        </activity>
+        <activity
+            android:name=".CustomizeTopListActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/title_activity_customize_top_list" >
+        </activity>
+        <activity
+            android:name=".CustomizeSubListActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/title_activity_customize_sub_list" >
+        </activity>
+        <activity
+            android:name=".ProcessingActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/title_activity_processing"
+            android:noHistory="true" >
+        </activity>
+        <activity
+            android:name=".ResultsActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/title_activity_results" >
+        </activity>
+        <uses-feature android:name="android.camera.hardware" />
+        <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    </application>
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE">
+
+    </uses-permission>
+</manifest>

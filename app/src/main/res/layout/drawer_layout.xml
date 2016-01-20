@@ -1,0 +1,24 @@
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:text="Customize"
+        android:id="@+id/drawer_layout"
+        android:layout_width="239dp"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:layout_gravity="center_vertical" >
+
+        <ListView
+            android:id="@+id/list_select"
+            android:layout_width="239dp"
+            android:layout_height="wrap_content">
+        </ListView>
+
+        <Button
+            android:text="Customize"
+            android:id="@+id/custom_button"
+            android:layout_width="239dp"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:onClick="navCustomize"/>
+
+    </RelativeLayout>
